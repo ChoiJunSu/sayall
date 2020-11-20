@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    p <로그인>
+    form(action="/auth/login", accept-charset="utf-8", method="post")
+        p 아이디:
+        input(name="id", type="text")
+        br
+        p 비밀번호:
+        input(name="pw", type="password")
+        br
+        button(type="submit") 로그인
