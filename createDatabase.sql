@@ -1,3 +1,31 @@
-create database main;
+CREATE DATABASE IF NOT EXISTS main
+    DEFAULT CHARACTER SET utf8mb4;
 
-use main;
+USE main;
+
+CREATE TABLE IF NOT EXISTS user (
+    id VARCHAR(20) NOT NULL,
+    pw VARCHAR(100) NOT NULL,
+    name VARCHAR(20) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
+    email VARCHAR(40) NOT NULL,
+    CONSTRAINT user_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS company (
+    id INT(20) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    CONSTRAINT company_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS worked_for (
+    id INT(20) NOT NULL AUTO_INCREMENT,
+    user_id VARCHAR(20) NOT NULL,
+    company_id INT(20) NOT NULL,
+    position VARCHAR(20) NOT NULL,
+    start_date TIMESTAMP NOT NULL,
+    end_date TIMESTAMP NOT NULL,
+    CONSTRAINT worked_for_pk PRIMARY KEY (id),
+    CONSTRAINT worked_for_user_fk FOREIGN KEY (user_id) REFERENCES user(id) ON UPDATE CASCADE,
+    CONSTRAINT worked_for_company_fk FOREIGN KEY (company_id) REFERENCES company(id) ON UPDATE CASCADE
+);
