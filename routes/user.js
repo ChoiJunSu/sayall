@@ -1,18 +1,15 @@
 const express = require('express');
 const router = express.Router();
-
-/*
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
 
 router.use((req, res, next) => {
   res.locals.user = req.user;
 
 })
-*/
 
-/* GET home page. */
+/* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'SAYALL' });
+  res.send('respond with a resource');
 });
 
 module.exports = router;
