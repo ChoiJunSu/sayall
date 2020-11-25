@@ -18,14 +18,15 @@ CREATE TABLE IF NOT EXISTS company (
     CONSTRAINT companyPk PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS workedFor (
+CREATE TABLE IF NOT EXISTS profile (
     id INT(20) NOT NULL AUTO_INCREMENT UNIQUE,
     userId VARCHAR(20) NOT NULL,
     companyId INT(20) NOT NULL,
     position VARCHAR(20) NOT NULL,
-    startDate DATETIME NOT NULL,
-    endDate DATETIME NOT NULL,
-    CONSTRAINT workedForPk PRIMARY KEY (id),
-    CONSTRAINT workedForUserFk FOREIGN KEY (userId) REFERENCES user(id) ON UPDATE CASCADE,
-    CONSTRAINT workedForCompanyFk FOREIGN KEY (companyId) REFERENCES company(id) ON UPDATE CASCADE
+    department VARCHAR(20) NOT NULL,
+    startDate DATE NOT NULL,
+    endDate DATE,
+    CONSTRAINT profilePk PRIMARY KEY (id),
+    CONSTRAINT profileUserFk FOREIGN KEY (userId) REFERENCES user(id) ON UPDATE CASCADE,
+    CONSTRAINT profileCompanyFk FOREIGN KEY (companyId) REFERENCES company(id) ON UPDATE CASCADE
 );

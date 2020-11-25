@@ -11,7 +11,11 @@ module.exports = () => {
         User.findOne({
             where: {id}
         })
-            .then(user => done(null, user))
+            .then(user => {
+                const user2 = user;
+                delete user2.pw;
+                done(null, user2)
+            })
             .catch(err => done(err));
     });
 

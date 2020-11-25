@@ -27,7 +27,7 @@ module.exports = class Company extends Sequelize.Model {
         });
     }
     static associate(db) {
-        db.Company.hasMany(db.WorkedFor, {
+        db.Company.hasMany(db.Profile, {
             foreignKey: 'companyId',
             sourceKey: 'id'
         });

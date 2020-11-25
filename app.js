@@ -1,7 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const env = process.env.NODE_ENV || 'development';
-const config = require('./config/config')
+const sessionConfig = require('./config/session.json')
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -13,6 +13,7 @@ const {sequelize} = require('./models');
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/user');
 const authRouter = require('./routes/auth');
+const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -35,7 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: config.session.secret,
+  secret: sessionConfig.secret,
   resave: true,
   saveUninitialized: false
 }));
@@ -46,6 +47,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
+app.use('/profile', profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -60,7 +62,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('result', {message: '서버 오류입니다.', redirect: '/', redirectName: '메인'});
 });
 
 module.exports = app;

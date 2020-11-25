@@ -3,17 +3,24 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
 const User = require('../models/user');
-
 const router = express.Router();
+const {Op} = require('sequelize');
+
+
+router.use((req, res, next) => {
+    res.locals.user = req.user;
+    return next();
+})
+
 
 router.post('/register', isNotLoggedIn, async (req, res, next) => {
    const {id, pw, name, phoneNumber, email} = req.body;
    try {
        const exUser = await User.findOne({
-           where: {phoneNumber}
+           where: {[Op.or]: [{id}, {phoneNumber}]}
        });
        if (exUser) {
-           return res.redirect('/join?error=exist');
+           return res.render('result', {message: '해당 정보로 가입된 회원이 존재합니다.', redirect: '/user/register', redirectName: '회원가입'});
        }
        const hash = await bcrypt.hash(pw, 12);
        await User.create({
@@ -23,7 +30,7 @@ router.post('/register', isNotLoggedIn, async (req, res, next) => {
            phoneNumber,
            email
        });
-       return res.redirect('/');
+       return res.render('result', {message: '회원가입 되었습니다.', redirect: '/', redirectName: '메인'});
    } catch (error) {
        console.error(error);
        return next(error);
@@ -37,15 +44,14 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
           return next(authError);
       }
       if (!user) {
-          return res.redirect('/?loginError=${info.message}');
+          return res.render('result', {message: '로그인 오류입니다.', redirect: '/', redirectName: '메인'});
       }
       return req.login(user, (loginError) => {
           if (loginError) {
               console.error(loginError);
               return next(loginError);
           }
-          console.log('login success');
-          return res.redirect('/');
+          return res.redirect('/'); // login success
       });
    })(req, res, next);
 });
@@ -53,7 +59,7 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
 router.get('/logout', isLoggedIn, (req, res) => {
     req.logout();
     req.session.destroy();
-    res.redirect('/');
+    return res.redirect('/');
 });
 
 module.exports = router;

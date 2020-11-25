@@ -1,0 +1,65 @@
+extends layout
+
+
+
+block content
+
+    p <프로필 등록>
+    form(action="/profile/register", accept-charset="utf-8", method="post")
+        p 회사 검색:
+        input(name="companyName", type="text")
+        ul(name="searchResult")
+            each company in companies
+                li(hidden=true onclick="getAndSetCompanyCode(this)") #{company.name} (#{company.id})
+        br
+        p 회사 ID:
+        input(name="companyId", type="text", readonly=true)
+        br
+        p 직급:
+        input(name="position", type="text", list="positionList")
+        datalist(id="positionList")
+            option(value="인턴")
+            option(value="사원")
+            option(value="주임")
+            option(value="대리")
+            option(value="과장")
+            option(value="차장")
+            option(value="부장")
+            option(value="이사")
+            option(value="상무")
+            option(value="전무")
+            option(value="부사장")
+            option(value="사장")
+            option(value="기타")
+        br
+        p 부서:
+        input(name="department", type="text")
+        br
+        p 입사일:
+        input(name="startDate", type="date")
+        br
+        p 퇴사일(재직중일시 비워주세요):
+        input(name="endDate", type="date")
+        br
+        button(type="submit") 등록
+
+
+    script.
+        // company search
+        const companyElements = document.getElementsByName('searchResult')[0].childNodes;
+        function searchCompany() {
+            const word = document.getElementsByName('companyName')[0].value;
+            companyElements.forEach(companyElement => {
+                companyElement.hidden = true;
+                if (companyElement.innerText.includes(word)) {
+                    companyElement.hidden = false;
+                }
+            });
+        }
+        document.getElementsByName('companyName')[0].addEventListener('keyup', searchCompany);
+
+        // get and set company code
+        function getAndSetCompanyCode(that) {
+            document.getElementsByName('companyName')[0].value = that.innerText;
+            document.getElementsByName('companyId')[0].value = that.innerText.substring(that.innerText.indexOf('(') + 1, that.innerText.indexOf(')'));
+        }

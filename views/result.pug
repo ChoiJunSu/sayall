@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    p #{message}
+    br
+    p 3초 후 #{redirectName} 페이지로 이동합니다.
+    script.
+        setTimeout(() => {
+            location.href = "#{redirect}";
+        }, 3000);

@@ -1,17 +1,16 @@
 const express = require('express');
 const router = express.Router();
-
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
 
 
-// router.use((req, res, next) => {
-//   res.locals.user = req.user;
-//
-// })
+router.use((req, res, next) => {
+  res.locals.user = req.user;
+  return next();
+})
 
-/* GET home page. */
+
 router.get('/', (req, res, next) => {
-  res.render('index', {user: req.user});
+  return res.render('index', {user: req.user});
 });
 
 module.exports = router;

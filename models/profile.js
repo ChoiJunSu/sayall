@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-module.exports = class WorkedFor extends Sequelize.Model {
+module.exports = class Profile extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
             id: {
@@ -22,31 +22,34 @@ module.exports = class WorkedFor extends Sequelize.Model {
                 type: Sequelize.STRING(20),
                 allowNull: false
             },
+            department: {
+                type: Sequelize.STRING(20),
+                allowNull: false
+            },
             startDate: {
                 type: Sequelize.DATE,
                 allowNull: false
             },
             endDate: {
-                type: Sequelize.DATE,
-                allowNull: false
+                type: Sequelize.DATE
             }
         }, {
             sequelize,
             timestamps: false,
             underscored: false,
-            modelName: 'User',
-            tableName: 'user',
+            modelName: 'Profile',
+            tableName: 'profile',
             paranoid: false,
             charset: 'utf8mb4',
             collate: 'utf8mb4_general_ci'
         });
     }
     static associate(db) {
-        db.WorkedFor.belongsTo(db.User, {
+        db.Profile.belongsTo(db.User, {
             foreignKey: 'userId',
             targetKey: 'id'
         });
-        db.WorkedFor.belongsTo(db.Company, {
+        db.Profile.belongsTo(db.Company, {
             foreignKey: 'companyId',
             targetKey: 'id'
         });
