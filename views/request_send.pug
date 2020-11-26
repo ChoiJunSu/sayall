@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    p <요청 보내기>
+    form(action="/request/send", accept-charset="utf-8", method="post")
+        p 궁금한 사람의 이름을 입력하세요.
+        input(id="targetName", name="targetName", required)
+        button(type="submit") 보내기
+        button(type="button", onclick="window.history.back()") 취소
+        input(id="receiverId", name="receiverId", required, hidden)
+        input(id="companyId", name="companyId", required, hidden)
+
+    p(id="dataReceiverId", hidden) #{receiverId}
+    p(id="dataCompanyId", hidden) #{companyId}
+
+    script.
+        window.onload = () => {
+            document.getElementById('receiverId').value = document.getElementById('dataReceiverId').innerText;
+            document.getElementById('companyId').value = document.getElementById('dataCompanyId').innerText;
+        };

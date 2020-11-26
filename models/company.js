@@ -31,5 +31,9 @@ module.exports = class Company extends Sequelize.Model {
             foreignKey: 'companyId',
             sourceKey: 'id'
         });
+        db.Company.hasMany(db.Request, {
+            foreignKey: 'companyId',
+            sourceKey: 'id'
+        });
     }
 };

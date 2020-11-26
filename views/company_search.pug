@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    p 회사 검색:
+    p <회사 검색>
         input(id="companySearch", type="text", onkeyup="searchCompany()", placeholder="회사 이름으로 검색하세요.")
     ul(id="searchResult")
         each company in companies
@@ -24,5 +24,5 @@ block content
         }
 
         function getProfiles(that) {
-            location.href = '/company/profiles?companyId=' + that.nextSibling.innerText;
+            location.href = '/company/detail?companyId=' + that.nextSibling.innerText;
         }

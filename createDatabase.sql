@@ -30,3 +30,15 @@ CREATE TABLE IF NOT EXISTS profile (
     CONSTRAINT profileUserFk FOREIGN KEY (userId) REFERENCES user(id) ON UPDATE CASCADE,
     CONSTRAINT profileCompanyFk FOREIGN KEY (companyId) REFERENCES company(id) ON UPDATE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS request (
+    id INT(20) NOT NULL AUTO_INCREMENT UNIQUE,
+    senderId VARCHAR(20) NOT NULL,
+    receiverId VARCHAR(20) NOT NULL,
+    companyId INT(20) NOT NULL,
+    targetName VARCHAR(20) NOT NULL,
+    reply TEXT,
+    CONSTRAINT requestPk PRIMARY KEY (id),
+    CONSTRAINT requestUserFk FOREIGN KEY (senderId, receiverId) REFERENCES user(id) ON UPDATE CASCADE,
+    CONSTRAINT requestCompanyFk FOREIGN KEY (companyId) REFERENCES company(id) ON UPDATE CASCADE
+);

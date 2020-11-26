@@ -8,7 +8,7 @@ const Company = require('../models/company');
 router.use((req, res, next) => {
     res.locals.user = req.user;
     return next();
-})
+});
 
 router.get('/search', isLoggedIn, async (req, res, next) => {
     try {
@@ -20,7 +20,7 @@ router.get('/search', isLoggedIn, async (req, res, next) => {
     }
 });
 
-router.get('/profiles', isLoggedIn, async (req, res, next) => {
+router.get('/detail', isLoggedIn, async (req, res, next) => {
    const {companyId} = req.query;
    try {
        const company = await Company.findOne({
