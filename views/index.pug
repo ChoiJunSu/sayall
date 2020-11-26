@@ -1,13 +1,4 @@
 extends layout
 
 block content
-    if user
-        p 안녕하세요 #{user.name} 님
-        button(onclick="location.href='/auth/logout'") 로그아웃
-        button(onclick="location.href='/company/search'") 회사 검색
-        button(onclick="location.href='/request/my'") 내 요청
-        button(onclick="location.href='/profile/my'") 내 프로필
-        button(onclick="location.href='/user/edit'") 회원정보 수정
-    else
-        button(onclick="location.href='/user/login'") 로그인
-        button(onclick="location.href='/user/register'") 회원가입
+    p Welcome to SAYALL

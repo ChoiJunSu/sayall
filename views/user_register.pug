@@ -1,22 +1,22 @@
-extends layout
-
-block content
-    p <회원가입>
-    form(action="/auth/register", accept-charset="utf-8", method="post")
-        p 아이디:
-        input(name="id", type="text", required)
+doctype html
+html
+    head
+        title= SAYALL
+        a(href="/") SAYALL
         br
-        p 비밀번호:
-        input(name="pw", type="password", required)
-        br
-        p 이름:
-        input(name="name", type="text", required)
-        br
-        p 전화번호:
-        input(name="phoneNumber", type="tel", placeholder="-는 생략해주세요.", required)
-        br
-        p 이메일
-        input(name="email", type="email", required)
-        br
-        button(type="submit") 회원가입
-    button(onclick="window.history.back()") 취소
+        link(rel="stylesheet", href="/stylesheets/style.css")
+    body
+        p <회원가입>
+        form(action="/auth/register", accept-charset="utf-8", method="post")
+            p 아이디:
+            input(name="id", type="text", required)
+            p 비밀번호:
+            input(name="pw", type="password", required)
+            p 이름:
+            input(name="name", type="text", required)
+            p 전화번호:
+            input(name="phoneNumber", type="tel", placeholder="-는 생략해주세요.", required)
+            p 이메일
+            input(name="email", type="email", required)
+            button(type="submit") 회원가입
+            button(type="button", onclick="window.history.back()") 취소

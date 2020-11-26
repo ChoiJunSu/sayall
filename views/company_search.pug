@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    p 회사 검색:
+        input(id="companySearch", type="text", onkeyup="searchCompany()", placeholder="회사 이름으로 검색하세요.")
+    ul(id="searchResult")
+        each company in companies
+            li(hidden)
+                p #{company.name}
+                button(type="button", onclick="getProfiles(this)") 프로필 보기
+                p(id="dataCompanyId", hidden) #{company.id}
+
+    script.
+        // company search
+        const companyElements = document.getElementById('searchResult').childNodes;
+        function searchCompany() {
+            const word = document.getElementById('companySearch').value;
+            companyElements.forEach(companyElement => {
+                companyElement.hidden = true;
+                if (companyElement.childNodes[0].innerText.includes(word)) {
+                    companyElement.hidden = false;
+                }
+            });
+        }
+
+        function getProfiles(that) {
+            location.href = '/company/profiles?companyId=' + that.nextSibling.innerText;
+        }

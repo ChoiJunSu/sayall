@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    p 회사 상세정보
+    p 회사 이름: #{company.name}
+    p 프로필
+    if profiles.length == 0
+        p 등록된 프로필이 없습니다.
+    else
+        ul
+            each profile in profiles
+                li
+                    p
+                    |   직급: #{profile.position}
+                    |   부서: #{profile.department}
+                    |   입사일: #{profile.startDate}
+                    |   퇴사일: #{profile.endDate}
+                    button(type="button", onclick="sendRequest(this)") 요청 보내기
+                    p(id="dataUserId", hidden)  #{profile.userId}
+
+    p(id="dataCompanyId", hidden) #{company.id}
+
+    script.
+        function sendRequest(that) {
+            location.href = '/request/send?receiverId=' + that.nextSibling.innerText
+                            + '&companyId=' + document.getElementById('dataCompanyId').innerText;
+        }

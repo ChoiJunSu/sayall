@@ -5,5 +5,21 @@ html
     a(href="/") SAYALL
     br
     link(rel="stylesheet", href="/stylesheets/style.css")
+    if user
+      p 안녕하세요 #{user.name} 님
+      button(type="button", onclick="location.href='/auth/logout'") 로그아웃
+      button(type="button", onclick="location.href='/company/search'") 회사 검색
+      button(type="button", onclick="location.href='/request/my'") 내 요청
+      button(type="button", onclick="location.href='/profile/my'") 내 프로필
+      button(type="button", onclick="location.href='/user/edit'") 회원정보 수정
+    else
+      p <로그인>
+      form(action="/auth/login", accept-charset="utf-8", method="post")
+        p 아이디:
+        input(name="id", type="text", required)
+        p 비밀번호:
+        input(name="pw", type="password", required)
+        button(type="submit") 로그인
+        button(type="button", onclick="location.href='/user/register'") 회원가입
   body
     block content

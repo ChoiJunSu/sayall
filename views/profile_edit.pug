@@ -8,10 +8,8 @@ block content
     form(action="/profile/edit", accept-charset="utf-8", method="post")
         p 회사 이름:
         input(id="companyName", name="companyName", type="text", readonly, required)
-        br
         p 회사 ID:
         input(id="companyId", name="companyId", type="text", readonly, required)
-        br
         p 직급:
         input(id="position", name="position", type="text", readonly, required)
         select(id="positionSelect", onchange="setPosition()")
@@ -29,19 +27,15 @@ block content
             option(value="부사장") 부사장
             option(value="사장") 사장
             option(value="기타") 기타
-        br
         p 부서:
         input(id="department", name="department", type="text", required)
-        br
         p 입사일:
         input(id="startDate", name="startDate", type="date", required)
-        br
         p 퇴사일(재직중일시 비워주세요):
         input(id="endDate", name="endDate", type="date")
-        br
         button(type="submit") 수정
+        button(type="button", onclick="window.history.back()") 취소
         input(id="profileId", name="profileId", hidden)
-    button(onclick="window.history.back()") 취소
 
     p(id="dataProfileId", hidden) #{profile.id}
     p(id="dataCompanyName", hidden) #{profile.Company.name}

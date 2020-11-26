@@ -36,7 +36,7 @@ router.get('/my', isLoggedIn, async (req, res, next) => {
 
 router.get('/register', isLoggedIn, async (req, res, next) => {
    try {
-      let companies = await Company.findAll({});
+      const companies = await Company.findAll({});
       return res.render('profile_register', {companies});
    } catch (error) {
       console.error(error);
