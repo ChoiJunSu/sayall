@@ -42,14 +42,16 @@ module.exports = class Request extends Sequelize.Model {
     }
     static associate(db) {
         db.Request.belongsTo(db.User, {
+            as: 'sender',
             foreignKey: 'senderId',
             targetKey: 'id'
         });
         db.Request.belongsTo(db.User, {
+            as: 'receiver',
             foreignKey: 'receiverId',
             targetKey: 'id'
         });
-        db.Profile.belongsTo(db.Company, {
+        db.Request.belongsTo(db.Company, {
             foreignKey: 'companyId',
             targetKey: 'id'
         });

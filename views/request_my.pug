@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    p <내 요청>
+    p - 보낸 요청
+    if sentRequests.length == 0
+        p 보낸 요청이 없습니다.
+    else
+        ul
+            each sentRequest in sentRequests
+                li
+                    p
+                    |   닉네임: #{sentRequest.receiver.nickname}
+                    |   회사 이름: #{sentRequest.Company.name}
+                    |   궁금한 사람: #{sentRequest.targetName}
+
+    p - 받은 요청
+    if receivedRequests.length == 0
+        p 받은 요청이 없습니다.
+    else
+        ul
+            each receivedRequest in receivedRequests
+                li
+                    p
+                    |   닉네임: #{receivedRequest.sender.nickname}
+                    |   회사 이름: #{receivedRequest.Company.name}
+                    |   궁금한 사람: #{receivedRequest.targetName}

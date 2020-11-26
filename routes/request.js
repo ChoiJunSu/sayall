@@ -13,12 +13,12 @@ router.use((req, res, next) => {
 });
 
 router.get('/send', isLoggedIn, async (req, res, next) => {
-    const {receiverId} = req.query;
+    const {receiverId, companyId} = req.query;
     try {
         const receiver = User.findOne({
             where: {id: receiverId}
         });
-        return res.render('request_send', req.query);
+        return res.render('request_send', {receiverId, companyId, receiverNickname: receiver.nickname});
     } catch (error) {
         console.error(error);
         return next(error);
@@ -52,6 +52,38 @@ router.post('/send', isLoggedIn, async (req, res, next) => {
         console.error(error);
         return next(error);
     }
+});
+
+router.get('/my', isLoggedIn, async (req, res, next) => {
+   const userId = req.user.id;
+   try {
+       const sentRequests = await Request.findAll({
+           include: [{
+               model: User,
+               as: 'receiver',
+               attributes: ['nickname']
+           }, {
+               model: Company,
+               attributes: ['name']
+           }],
+           where: {senderId: userId}
+       });
+       const receivedRequests = await Request.findAll({
+           include: [{
+               model: User,
+               as: 'sender',
+               attributes: ['nickname']
+           }, {
+               model: Company,
+               attributes: ['name']
+           }],
+           where: {receiverId: userId}
+       });
+       return res.render('request_my', {sentRequests, receivedRequests});
+   } catch (error) {
+       console.error(error);
+       return next(error);
+   }
 });
 
 module.exports = router;

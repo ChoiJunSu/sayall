@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    p <회사 등록>
+    form(action="/company/register", accept-charset="utf-8", method="post")
+        p 회사 이름을 입력하세요.
+        input(name="companyName", type="text", required)
+        button(type="submit") 등록
+        button(type="button", onclick="window.history.back()") 취소

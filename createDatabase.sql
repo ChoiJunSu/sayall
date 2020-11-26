@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS user (
     name VARCHAR(20) NOT NULL,
     phoneNumber VARCHAR(20) NOT NULL UNIQUE,
     email VARCHAR(40) NOT NULL,
+    nickname VARCHAR(20) NOT NULL,
     CONSTRAINT userPk PRIMARY KEY (id)
 );
 
@@ -39,6 +40,7 @@ CREATE TABLE IF NOT EXISTS request (
     targetName VARCHAR(20) NOT NULL,
     reply TEXT,
     CONSTRAINT requestPk PRIMARY KEY (id),
-    CONSTRAINT requestUserFk FOREIGN KEY (senderId, receiverId) REFERENCES user(id) ON UPDATE CASCADE,
+    CONSTRAINT requestSenderUserFk FOREIGN KEY (senderId) REFERENCES user(id) ON UPDATE CASCADE,
+    CONSTRAINT requestReceiverUserFk FOREIGN KEY (receiverId) REFERENCES user(id) ON UPDATE CASCADE,
     CONSTRAINT requestCompanyFk FOREIGN KEY (companyId) REFERENCES company(id) ON UPDATE CASCADE
 );

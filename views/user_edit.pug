@@ -4,15 +4,17 @@ block content
     p <회원정보 수정>
     form(action="/user/edit", accept-charset="utf-8", method="post")
         p 아이디:
-        input(id="id", name="id", type="text", readonly, required)\
+        input(id="id", name="id", type="text", readonly, required)
         p 비밀번호:
-        input(id="pw", name="pw", type="password")\
+        input(id="pw", name="pw", type="password")
         p 이름:
-        input(id="name", name="name", type="text", required)\
+        input(id="name", name="name", type="text", required)
         p 전화번호:
-        input(id="phoneNumber", name="phoneNumber", type="tel", readonly, required)\
+        input(id="phoneNumber", name="phoneNumber", type="tel", readonly, required)
         p 이메일
-        input(id="email", name="email", type="email", required)\
+        input(id="email", name="email", type="email", required)
+        p 닉네임
+        input(id="nickname", name="nickname", type="text", required)
         button(type="submit") 수정
         button(type="button", onclick="window.history.back()") 취소
 
@@ -20,11 +22,12 @@ block content
     p(id="dataName", hidden) #{user.name}
     p(id="dataPhoneNumber", hidden) #{user.phoneNumber}
     p(id="dataEmail", hidden) #{user.email}
-
+    p(id="dataNickname", hidden) #{user.nickname}
     script.
         window.onload = () => {
             document.getElementById('id').value = document.getElementById('dataId').innerText;
             document.getElementById('name').value = document.getElementById('dataName').innerText;
             document.getElementById('phoneNumber').value = document.getElementById('dataPhoneNumber').innerText;
             document.getElementById('email').value = document.getElementById('dataEmail').innerText;
+            document.getElementById('nickname').value = document.getElementById('dataNickname').innerText;
         };

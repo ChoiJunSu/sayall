@@ -21,21 +21,23 @@ router.get('/edit', isLoggedIn, (req, res, next) => {
 
 router.post('/edit', isLoggedIn, async (req, res, next) => {
   const userId = req.user.id;
-  const {pw, name, email} = req.body;
+  const {pw, name, email, nickname} = req.body;
   try {
     if (pw) {
       const hash = await bcrypt.hash(pw, 12);
       const result = await User.update({
         pw: hash,
         name,
-        email
+        email,
+        nickname
       }, {
         where: {id: userId}
       });
     } else {
       const result = await User.update({
         name,
-        email
+        email,
+        nickname
       }, {
         where: {id: userId}
       });

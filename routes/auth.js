@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 
 
 router.post('/register', isNotLoggedIn, async (req, res, next) => {
-   const {id, pw, name, phoneNumber, email} = req.body;
+   const {id, pw, name, phoneNumber, email, nickname} = req.body;
    try {
        const exUser = await User.findOne({
            where: {[Op.or]: [{id}, {phoneNumber}]}
@@ -28,7 +28,8 @@ router.post('/register', isNotLoggedIn, async (req, res, next) => {
            pw: hash,
            name,
            phoneNumber,
-           email
+           email,
+           nickname
        });
        return res.render('result', {message: '회원가입 되었습니다.', redirect: '/', redirectName: '메인'});
    } catch (error) {

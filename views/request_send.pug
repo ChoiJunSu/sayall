@@ -2,9 +2,10 @@ extends layout
 
 block content
     p <요청 보내기>
+    p #{receiverNickname} 님에게 요청을 보냅니다.
     form(action="/request/send", accept-charset="utf-8", method="post")
         p 궁금한 사람의 이름을 입력하세요.
-        input(id="targetName", name="targetName", required)
+        input(id="targetName", name="targetName", type="text", required)
         button(type="submit") 보내기
         button(type="button", onclick="window.history.back()") 취소
         input(id="receiverId", name="receiverId", required, hidden)
