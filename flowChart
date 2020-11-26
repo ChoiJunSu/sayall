@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-26T17:26:50.057Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="_g2adNZE5yDiQowyP9ts" version="13.10.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-26T17:27:15.050Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="b7svs0qn9-I04u_s4kGk" version="13.10.3" type="github">
   <diagram id="DG7FWDkX57hB6UpWr2pP" name="Page-1">
     <mxGraphModel dx="1692" dy="1121" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -100,10 +100,10 @@
         <mxCell id="f81G2F4fXWUUfViKHGe5-70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="f81G2F4fXWUUfViKHGe5-54" target="f81G2F4fXWUUfViKHGe5-68" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="f81G2F4fXWUUfViKHGe5-54" value="my_request" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+        <mxCell id="f81G2F4fXWUUfViKHGe5-54" value="my_request" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#7EA6E0;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="239" y="160" width="120" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="f81G2F4fXWUUfViKHGe5-55" value="request_list" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="f81G2F4fXWUUfViKHGe5-54" vertex="1">
+        <mxCell id="f81G2F4fXWUUfViKHGe5-55" value="request_list" style="text;strokeColor=none;fillColor=#7EA6E0;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="f81G2F4fXWUUfViKHGe5-54" vertex="1">
           <mxGeometry y="26" width="120" height="26" as="geometry" />
         </mxCell>
         <mxCell id="f81G2F4fXWUUfViKHGe5-59" value="chatting_room" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
