@@ -4,9 +4,9 @@ block content
     p <로그인>
     form(action="/auth/login", accept-charset="utf-8", method="post")
         p 아이디:
-        input(name="id", type="text")
+        input(name="id", type="text", required)
         br
         p 비밀번호:
-        input(name="pw", type="password")
+        input(name="pw", type="password", required)
         br
         button(type="submit") 로그인

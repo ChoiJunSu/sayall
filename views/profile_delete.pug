@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    p 프로필을 삭제하시겠습니까?
+    button(onclick="deleteProfile()") 삭제
+    button(onclick="window.history.back()") 취소
+
+    p(id="dataProfileId", hidden) #{profileId}
+
+    script.
+        function deleteProfile() {
+            location.href = '/profile/delete?confirm=true&profileId=' + document.getElementById('dataProfileId').innerText;
+        }

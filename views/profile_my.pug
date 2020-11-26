@@ -1,10 +1,22 @@
 extends layout
 
 block content
-    if profiles.length == 0
+    if profiles.length==0
         p 프로필을 생성해주세요
     else
         ul
             each profile in profiles
-                li 회사 이름: #{profile.companyName} 직급: #{profile.position} 입사일: #{profile.startDate} 퇴사일: #{profile.endDate}
+                li
+                    |   회사 이름: #{profile.Company.name}
+                    |   직급: #{profile.position}
+                    |   입사일: #{profile.startDate}
+                    |   퇴사일: #{profile.endDate}
+                    button(onclick="getProfileDetail(this)") 상세정보
+                    p(id="dataProfileId", hidden) #{profile.id}
+
     button(onclick="location.href='/profile/register'") 프로필 추가
+
+    script.
+        function getProfileDetail(that) {
+            location.href = '/profile/detail?profileId=' + that.parentNode.childNodes[2].innerText;
+        }

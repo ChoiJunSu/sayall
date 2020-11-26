@@ -23,7 +23,7 @@ router.post('/register', isNotLoggedIn, async (req, res, next) => {
            return res.render('result', {message: '해당 정보로 가입된 회원이 존재합니다.', redirect: '/user/register', redirectName: '회원가입'});
        }
        const hash = await bcrypt.hash(pw, 12);
-       await User.create({
+       const result = await User.create({
            id,
            pw: hash,
            name,

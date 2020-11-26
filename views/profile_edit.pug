@@ -1,0 +1,69 @@
+extends layout
+
+
+
+block content
+
+    p <프로필 수정>
+    form(action="/profile/edit", accept-charset="utf-8", method="post")
+        p 회사 이름:
+        input(id="companyName", name="companyName", type="text", readonly, required)
+        br
+        p 회사 ID:
+        input(id="companyId", name="companyId", type="text", readonly, required)
+        br
+        p 직급:
+        input(id="position", name="position", type="text", readonly, required)
+        select(id="positionSelect", onchange="setPosition()")
+            option(id="selectedPosition", hidden, selected)
+            option(value="인턴") 인턴
+            option(value="사원") 사원
+            option(value="주임") 주임
+            option(value="대리") 대리
+            option(value="과장") 과장
+            option(value="차장") 차장
+            option(value="부장") 부장
+            option(value="이사") 이사
+            option(value="상무") 상무
+            option(value="전무") 전무
+            option(value="부사장") 부사장
+            option(value="사장") 사장
+            option(value="기타") 기타
+        br
+        p 부서:
+        input(id="department", name="department", type="text", required)
+        br
+        p 입사일:
+        input(id="startDate", name="startDate", type="date", required)
+        br
+        p 퇴사일(재직중일시 비워주세요):
+        input(id="endDate", name="endDate", type="date")
+        br
+        button(type="submit") 수정
+        input(id="profileId", name="profileId", hidden)
+    button(onclick="window.history.back()") 취소
+
+    p(id="dataProfileId", hidden) #{profile.id}
+    p(id="dataCompanyName", hidden) #{profile.Company.name}
+    p(id="dataCompanyId", hidden) #{profile.companyId}
+    p(id="dataPosition", hidden) #{profile.position}
+    p(id="dataDepartment", hidden) #{profile.department}
+    p(id="dataStartDate", hidden) #{profile.startDate}
+    p(id="dataEndDate", hidden) #{profile.endDate}
+
+    script.
+        window.onload = () => {
+            document.getElementById('profileId').value = document.getElementById('dataProfileId').innerText;
+            document.getElementById('companyName').value = document.getElementById('dataCompanyName').innerText;
+            document.getElementById('companyId').value = document.getElementById('dataCompanyId').innerText;
+            document.getElementById('selectedPosition').value = document.getElementById('dataPosition').innerText;
+            document.getElementById('selectedPosition').innerText = document.getElementById('dataPosition').innerText;
+            document.getElementById('position').value = document.getElementById('dataPosition').innerText;
+            document.getElementById('department').value = document.getElementById('dataDepartment').innerText;
+            document.getElementById('startDate').value = document.getElementById('dataStartDate').innerText;
+            document.getElementById('endDate').value = document.getElementById('dataEndDate').innerText;
+        };
+
+        function setPosition() {
+            document.getElementById('position').value = document.getElementById('positionSelect').value;
+        }
