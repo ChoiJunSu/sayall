@@ -45,3 +45,18 @@ CREATE TABLE IF NOT EXISTS request (
     CONSTRAINT requestReceiverUserFk FOREIGN KEY (receiverId) REFERENCES user(id) ON UPDATE CASCADE,
     CONSTRAINT requestCompanyFk FOREIGN KEY (companyId) REFERENCES company(id) ON UPDATE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS rating (
+    id INT(20) NOT NULL AUTO_INCREMENT UNIQUE,
+    requestId INT(20) NOT NULL,
+    userId VARCHAR(20) NOT NULL,
+    objectivity INT(5) NOT NULL,
+    quickness INT(5) NOT NULL,
+    kindness INT(5) NOT NULL,
+    CONSTRAINT ratingPk PRIMARY KEY (id),
+    CONSTRAINT ratingRequestId FOREIGN KEY (requestId) REFERENCES request(id) ON UPDATE CASCADE,
+    CONSTRAINT ratingRequestUser FOREIGN KEY (userId) REFERENCES request(receiverId) ON UPDATE CASCADE,
+    CONSTRAINT objectivityCheck CHECK (objectivity >= 0 AND objectivity <= 10),
+    CONSTRAINT quicknessCheck CHECK (quickness >= 0 AND quickness <= 10),
+    CONSTRAINT kindnessCheck CHECK (kindness >= 0 AND kindness <= 10)
+)
