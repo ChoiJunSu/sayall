@@ -31,7 +31,11 @@ router.post('/register', isNotLoggedIn, async (req, res, next) => {
            email,
            nickname
        });
-       return res.render('result', {message: '회원가입 되었습니다.', redirect: '/', redirectName: '메인'});
+       if (result) {
+           return res.render('result', {message: '회원가입 되었습니다.', redirect: '/', redirectName: '메인'});
+       } else {
+           return res.render('result', {message: '회원가입이 완료되지 않았습니다.', redirect: '/', redirectName: '메인'});
+       }
    } catch (error) {
        console.error(error);
        return next(error);

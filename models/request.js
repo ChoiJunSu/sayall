@@ -28,6 +28,10 @@ module.exports = class Request extends Sequelize.Model {
             },
             reply: {
                 type: Sequelize.TEXT
+            },
+            status: {
+                type: Sequelize.STRING(20),
+                allowNull: false
             }
         }, {
             sequelize,

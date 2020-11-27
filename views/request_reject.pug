@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    p <요청 거절>
+    p #{request.Company.name} 에서 일했던 #{request.targetName} 에 대한 요청을 거절합니다.
+    form(action="/request/reject", accept-charset="utf-8", method="post")
+        button(type="submit") 거절
+        button(type="button", onclick="window.history.back()") 취소
+        input(id="requestId", name="requestId", hidden)
+
+    p(id="dataRequestId", hidden) #{request.id}
+
+    script.
+        window.onload = () => {
+            document.getElementById('requestId').value = document.getElementById('dataRequestId').innerText;
+        };
+    W

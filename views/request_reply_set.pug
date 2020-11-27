@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    p <답변하기>
+    p #{request.Company.name} 에서 일했던 #{request.targetName} 에 대하여 답변합니다.
+    form(action="/request/reply/set", accept-charset="utf-8", method="post")
+        textarea(name="reply", required)
+        button(type="submit") 등록
+        button(type="button", onclick="window.history.back()") 취소
+        input(id="requestId", name="requestId", hidden)
+
+    p(id="dataRequestId", hidden) #{request.id}
+
+    script.
+        window.onload = () => {
+            document.getElementById('requestId').value = document.getElementById('dataRequestId').innerText;
+        };

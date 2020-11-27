@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS request (
     companyId INT(20) NOT NULL,
     targetName VARCHAR(20) NOT NULL,
     reply TEXT,
+    status VARCHAR(20) NOT NULL,
     CONSTRAINT requestPk PRIMARY KEY (id),
     CONSTRAINT requestSenderUserFk FOREIGN KEY (senderId) REFERENCES user(id) ON UPDATE CASCADE,
     CONSTRAINT requestReceiverUserFk FOREIGN KEY (receiverId) REFERENCES user(id) ON UPDATE CASCADE,

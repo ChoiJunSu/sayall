@@ -22,10 +22,11 @@ router.get('/edit', isLoggedIn, (req, res, next) => {
 router.post('/edit', isLoggedIn, async (req, res, next) => {
   const userId = req.user.id;
   const {pw, name, email, nickname} = req.body;
+  let result;
   try {
     if (pw) {
       const hash = await bcrypt.hash(pw, 12);
-      const result = await User.update({
+      result = await User.update({
         pw: hash,
         name,
         email,
@@ -34,7 +35,7 @@ router.post('/edit', isLoggedIn, async (req, res, next) => {
         where: {id: userId}
       });
     } else {
-      const result = await User.update({
+      result = await User.update({
         name,
         email,
         nickname
@@ -42,7 +43,11 @@ router.post('/edit', isLoggedIn, async (req, res, next) => {
         where: {id: userId}
       });
     }
-    return res.render('result', {message: '회원정보가 수정되었습니다.', redirect: '/', redirectName: '메인'});
+    if (result[0]) {
+      return res.render('result', {message: '회원정보가 수정되었습니다.', redirect: '/', redirectName: '메인'});
+    } else {
+      return res.render('result', {message: '회원정보가 수정되지 않았습니다.', redirect: '/', redirectName: '메인'});
+    }
   } catch (error) {
     console.error(error);
     return next(error);

@@ -56,7 +56,12 @@ router.post('/register', isLoggedIn, async (req, res, next) => {
          startDate,
          endDate: endDate?endDate:null
       });
-      return res.render('result', {message: '프로필이 등록되었습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      if (result) {
+         return res.render('result', {message: '프로필이 등록되었습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      } else {
+         return res.render('result', {message: '프로필이 등록되지 않았습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      }
+
    } catch (error) {
       console.error(error);
       return next(error);
@@ -92,14 +97,18 @@ router.post('/edit', isLoggedIn, async (req, res, next) => {
          position,
          department,
          startDate,
-         endDate
+         endDate: endDate?endDate:null
       }, {
          where: {
             id: profileId,
             userId
          }
       });
-      return res.render('result', {message: '프로필이 수정되었습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      if (result[0]) {
+         return res.render('result', {message: '프로필이 수정되었습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      } else {
+         return res.render('result', {message: '프로필이 수정되지 않았습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      }
    } catch (error) {
       console.error(error);
       return next(error);
@@ -119,7 +128,11 @@ router.get('/delete', isLoggedIn, async (req, res, next) => {
             userId
          }
       });
-      return res.render('result', {message: '프로필이 삭제되었습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      if (result[0]) {
+         return res.render('result', {message: '프로필이 삭제되었습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      } else {
+         return res.render('result', {message: '프로필이 삭제되지 않았습니다.', redirect: '/profile/my', redirectName: '내 프로필'});
+      }
    } catch (error) {
       console.error(error);
       return next(error);
