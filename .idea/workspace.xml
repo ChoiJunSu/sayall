@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c61f5f35-7fcf-484d-b609-beb294415d32" name="Default Changelist" comment="added rating table and sequelize model&#10;working on rating&#10;todo&#10;- company search should be executed in background&#10;- user delete&#10;- add rating system">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passport/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/passport/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/company.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Pug File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kV1mXRJSrxAtv1Y2c3j0L6Ssm4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.8" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/pm2" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CHOI\WebstormProjects\sayall" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Database Script.console.sql">
+    <configuration name="nodemon" type="CompoundRunConfigurationType">
+      <method v="2" />
+    </configuration>
+    <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/68358523-523f-4f5f-83f0-967cb58a25fc/console.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="createDatabase.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/createDatabase.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Compound.nodemon" />
+      <item itemvalue="Database Script.createDatabase.sql" />
+      <item itemvalue="Database Script.console.sql" />
+      <item itemvalue="Node.js.bin\www" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.console.sql" />
+        <item itemvalue="Database Script.createDatabase.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c61f5f35-7fcf-484d-b609-beb294415d32" name="Default Changelist" comment="" />
+      <created>1605771103835</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605771103835</updated>
+      <workItem from="1605771104883" duration="2162000" />
+      <workItem from="1605845581729" duration="19611000" />
+      <workItem from="1606058419426" duration="16391000" />
+      <workItem from="1606308238745" duration="14835000" />
+      <workItem from="1606359262908" duration="1136000" />
+      <workItem from="1606360424486" duration="32069000" />
+      <workItem from="1606478406993" duration="11456000" />
+      <workItem from="1607410701252" duration="1502000" />
+      <workItem from="1607565986938" duration="9183000" />
+      <workItem from="1608258415427" duration="2113000" />
+      <workItem from="1608367418079" duration="582000" />
+      <workItem from="1608561508535" duration="50000" />
+      <workItem from="1608638104040" duration="1220000" />
+      <workItem from="1608681311885" duration="2751000" />
+      <workItem from="1608768281569" duration="4222000" />
+      <workItem from="1608794207768" duration="2449000" />
+    </task>
+    <task id="LOCAL-00001" summary="generate express app">
+      <created>1605771334946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605771334946</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add creating database sql">
+      <created>1605852039829</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605852039829</updated>
+    </task>
+    <task id="LOCAL-00003" summary="developing login process">
+      <created>1605866423384</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605866423384</updated>
+    </task>
+    <task id="LOCAL-00004" summary="finished login">
+      <created>1606062969169</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606062969169</updated>
+    </task>
+    <task id="LOCAL-00005" summary="finished profile">
+      <created>1606375967644</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606375967644</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finished company search&#10;working on send request">
+      <created>1606380268627</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606380268627</updated>
+    </task>
+    <task id="LOCAL-00007" summary="finished request send">
+      <created>1606407575121</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606407575121</updated>
+    </task>
+    <task id="LOCAL-00008" summary="finished request my&#10;todo&#10;- add request status&#10;- company search should be executed in background&#10;- user delete">
+      <created>1606411708063</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606411708063</updated>
+    </task>
+    <task id="LOCAL-00009" summary="finished request status&#10;working on rating&#10;todo&#10;- company search should be executed in background&#10;- user delete&#10;- add rating system">
+      <created>1606488951824</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606488951824</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added rating table and sequelize model&#10;working on rating&#10;todo&#10;- company search should be executed in background&#10;- user delete&#10;- add rating system">
+      <created>1606499476700</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606499476700</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="generate express app" />
+    <MESSAGE value="add creating database sql" />
+    <MESSAGE value="developing login process" />
+    <MESSAGE value="finished login" />
+    <MESSAGE value="finished profile" />
+    <MESSAGE value="finished company search&#10;working on send request" />
+    <MESSAGE value="finished request send" />
+    <MESSAGE value="finished request my&#10;todo&#10;- add request status&#10;- company search should be executed in background&#10;- user delete" />
+    <MESSAGE value="finished request status&#10;working on rating&#10;todo&#10;- company search should be executed in background&#10;- user delete&#10;- add rating system" />
+    <MESSAGE value="added rating table and sequelize model&#10;working on rating&#10;todo&#10;- company search should be executed in background&#10;- user delete&#10;- add rating system" />
+    <option name="LAST_COMMIT_MESSAGE" value="added rating table and sequelize model&#10;working on rating&#10;todo&#10;- company search should be executed in background&#10;- user delete&#10;- add rating system" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1312" y="358" width="1092" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606058526754">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1312" y="358" width="1092" height="740" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1606058526754" />
+    <state x="745" y="504" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606360378126">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="745" y="504" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1606360378126" />
+    <state x="741" y="556" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1608260206218">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="741" y="556" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.3440.1400@0.0.3440.1400" timestamp="1608260206218" />
+    <state x="661" y="480" key="EditFileWatcherDialog" timestamp="1606069992127">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="661" y="480" key="EditFileWatcherDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1606069992127" />
+    <state x="984" y="455" key="FileChooserDialogImpl" timestamp="1608561549468">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="984" y="455" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1608561549468" />
+    <state width="710" height="402" key="GridCell.Tab.0.bottom" timestamp="1606499379994">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="710" height="402" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1606499379994" />
+    <state width="710" height="402" key="GridCell.Tab.0.center" timestamp="1606499379994">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="710" height="402" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1606499379994" />
+    <state width="710" height="402" key="GridCell.Tab.0.left" timestamp="1606499379994">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="710" height="402" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1606499379994" />
+    <state width="710" height="402" key="GridCell.Tab.0.right" timestamp="1606499379994">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="710" height="402" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1606499379994" />
+    <state width="274" height="477" key="HiddenNamespacesPopup" timestamp="1608773356777">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="274" height="477" key="HiddenNamespacesPopup/0.0.3440.1400@0.0.3440.1400" timestamp="1608773356777" />
+    <state x="811" y="344" key="SettingsEditor" timestamp="1608260358216">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="811" y="344" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1608260358216" />
+    <state x="1312" y="419" key="Vcs.Push.Dialog.v2" timestamp="1606499480153">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1312" y="419" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1606499480153" />
+    <state x="860" y="590" width="322" height="249" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1606478711319">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="860" y="590" width="322" height="249" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.3440.1400@0.0.3440.1400" timestamp="1606478711319" />
+    <state x="575" y="358" key="com.intellij.database.dbimport.ImportDialog" timestamp="1606067962640">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="575" y="358" key="com.intellij.database.dbimport.ImportDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1606067962640" />
+    <state x="725" y="508" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1606067959175">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="725" y="508" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1606067959175" />
+    <state x="100" y="100" width="2098" height="1200" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606362555634">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="100" y="100" width="2098" height="1200" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1606362555634" />
+    <state x="781" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606411778565">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="781" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1606411778565" />
+    <state x="703" y="301" width="584" height="804" key="find.popup" timestamp="1606069646431">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="703" y="301" width="584" height="804" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1606069646431" />
+    <state x="656" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1606406872272">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="656" y="320" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1606406872272" />
+  </component>
+</project>
