@@ -1,4 +1,10 @@
 extends layout
 
 block content
-    
+    script.
+        try {
+            let user = !{user?JSON.stringify(user):null};
+            console.log(user);
+        } catch (error) {
+            console.error(error);
+        }

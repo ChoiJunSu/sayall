@@ -9,12 +9,12 @@ module.exports = () => {
 
     passport.deserializeUser((id, done) => {
         User.findOne({
-            where: {id}
+            where: {id},
+            attributes: {exclude: ['pw']}
         })
             .then(user => {
-                const user2 = user;
-                delete user2.pw;
-                done(null, user2)
+                console.log(user);
+                done(null, user);
             })
             .catch(err => done(err));
     });

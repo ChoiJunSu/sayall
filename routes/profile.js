@@ -4,13 +4,6 @@ const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
 const Profile = require('../models/profile');
 const Company = require('../models/company');
 
-
-router.use((req, res, next) => {
-   res.locals.user = req.user;
-   return next();
-});
-
-
 router.get('/my', isLoggedIn, async (req, res, next) => {
    const id = req.user.id;
    try {

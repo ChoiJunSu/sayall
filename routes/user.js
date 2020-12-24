@@ -4,12 +4,6 @@ const bcrypt = require('bcrypt');
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
 const User = require('../models/user');
 
-
-router.use((req, res, next) => {
-  res.locals.user = req.user;
-  return next();
-});
-
 // register page
 router.get('/register', isNotLoggedIn, (req, res, next) => {
   return res.render('user_register');

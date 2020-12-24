@@ -5,12 +5,6 @@ const User = require('../models/user');
 const Profile = require('../models/profile');
 const Company = require('../models/company');
 
-
-router.use((req, res, next) => {
-    res.locals.user = req.user;
-    return next();
-});
-
 router.get('/register', isLoggedIn, (req, res, next) => {
     return res.render('company_register');
 });
@@ -38,6 +32,8 @@ router.post('/register', isLoggedIn, async (req, res, next) => {
 router.get('/search', isLoggedIn, async (req, res, next) => {
     try {
         const companies = await Company.findAll({});
+        console.log(companies);
+        console.log('after companies');
         return res.render('company_search', {companies});
     } catch (error) {
         console.error(error);

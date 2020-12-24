@@ -6,12 +6,6 @@ const Profile = require('../models/profile');
 const Company = require('../models/company');
 const Request = require('../models/request');
 
-
-router.use((req, res, next) => {
-    res.locals.user = req.user;
-    return next();
-});
-
 router.get('/send', isLoggedIn, async (req, res, next) => {
     const {receiverId, companyId} = req.query;
     try {
