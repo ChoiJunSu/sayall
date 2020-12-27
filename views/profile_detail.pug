@@ -4,16 +4,16 @@ extends layout
 
 block content
     p <프로필 상세정보>
-    p 회사 이름: #{profile.Company.name}
-    p 직급: #{profile.position}
-    p 부서: #{profile.department}
-    p 입사일: #{profile.startDate}
-    p 퇴사일: #{profile.endDate}
+    p 회사 이름: #{Profile.Company.name}
+    p 직급: #{Profile.position}
+    p 부서: #{Profile.department}
+    p 입사일: #{Profile.startDate}
+    p 퇴사일: #{Profile.endDate}
     button(type="button", onclick="editProfile()") 수정
     button(type="button", onclick="deleteProfile()") 삭제
     button(type="button", onclick="window.history.back()") 취소
 
-    p(hidden, id="dataProfileId") #{profile.id}
+    p(hidden, id="dataProfileId") #{Profile.id}
 
     script.
         function editProfile() {

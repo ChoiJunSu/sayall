@@ -20,7 +20,7 @@ router.get('/my', isLoggedIn, async (req, res, next) => {
             profiles[i].endDate = '재직중';
          }
       }
-      res.render('profile_my', {profiles});
+      res.render('profile_my', {Profiles: profiles});
    } catch (error) {
       console.error(error);
       return next(error);
@@ -30,7 +30,7 @@ router.get('/my', isLoggedIn, async (req, res, next) => {
 router.get('/register', isLoggedIn, async (req, res, next) => {
    try {
       const companies = await Company.findAll({});
-      return res.render('profile_register', {companies});
+      return res.render('profile_register', {Companies: companies});
    } catch (error) {
       console.error(error);
       return next(error);
@@ -75,7 +75,7 @@ router.get('/edit', isLoggedIn, async (req, res, next) => {
             userId
          }
       });
-      return res.render('profile_edit', {profile});
+      return res.render('profile_edit', {Profile: profile});
    } catch (error) {
       console.error(error);
       return next(error);
@@ -150,7 +150,7 @@ router.get('/detail', isLoggedIn, async (req, res, next) => {
       if (!profile.endDate) {
          profile.endDate = '재직중';
       }
-      return res.render('profile_detail', {profile});
+      return res.render('profile_detail', {Profile: profile});
    } catch (error) {
       console.error(error);
       return next(error);

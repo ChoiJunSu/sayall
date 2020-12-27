@@ -3,41 +3,41 @@ extends layout
 block content
     p <내 요청>
     p - 보낸 요청
-    if sentRequests.length == 0
+    if SentRequests.length == 0
         p 보낸 요청이 없습니다.
     else
         ul
-            each sentRequest in sentRequests
+            each SentRequest in SentRequests
                 li
-                    p(hidden) #{sentRequest.id}
+                    p(hidden) #{SentRequest.id}
                     p
-                    |   닉네임: #{sentRequest.receiver.nickname}
-                    |   회사 이름: #{sentRequest.Company.name}
-                    |   궁금한 사람: #{sentRequest.targetName}
-                    |   상태: #{sentRequest.status}
-                    if sentRequest.reply
+                    |   닉네임: #{SentRequest.Receiver.nickname}
+                    |   회사 이름: #{SentRequest.Company.name}
+                    |   궁금한 사람: #{SentRequest.targetName}
+                    |   상태: #{SentRequest.status}
+                    if SentRequest.reply
                         button(type="button", onclick="getReply(this)") 답변보기
-                    if sentRequest.status == '평가중'
+                    if SentRequest.status == '평가중'
                         button(type="button", onclick="setRating(this)") 평가하기
 
 
     p - 받은 요청
-    if receivedRequests.length == 0
+    if ReceivedRequests.length == 0
         p 받은 요청이 없습니다.
     else
         ul
-            each receivedRequest in receivedRequests
+            each ReceivedRequest in ReceivedRequests
                 li
-                    p(hidden) #{receivedRequest.id}
+                    p(hidden) #{ReceivedRequest.id}
                     p
-                    |   닉네임: #{receivedRequest.sender.nickname}
-                    |   회사 이름: #{receivedRequest.Company.name}
-                    |   궁금한 사람: #{receivedRequest.targetName}
-                    |   상태: #{receivedRequest.status}
-                    if receivedRequest.status == '대기중'
+                    |   닉네임: #{ReceivedRequest.Sender.nickname}
+                    |   회사 이름: #{ReceivedRequest.Company.name}
+                    |   궁금한 사람: #{ReceivedRequest.targetName}
+                    |   상태: #{ReceivedRequest.status}
+                    if ReceivedRequest.status == '대기중'
                         button(type="button", onclick="setReply(this)") 답변하기
                         button(type="button", onclick="rejectRequest(this)") 거절하기
-                    else if receivedRequest.status == '완료됨'
+                    else if ReceivedRequest.status == '완료됨'
                         button(type="button", onclick="getRating(this)") 평가보기
 
     script.

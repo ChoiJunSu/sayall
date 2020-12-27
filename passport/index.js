@@ -13,7 +13,6 @@ module.exports = () => {
             attributes: {exclude: ['pw']}
         })
             .then(user => {
-                console.log(user);
                 done(null, user);
             })
             .catch(err => done(err));

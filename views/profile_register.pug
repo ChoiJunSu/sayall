@@ -8,11 +8,11 @@ block content
         p 회사 이름:
         input(id="companyName", name="companyName", type="text", onkeyup="searchCompany()", placeholder="검색하여 선택해주세요.")
         ul(id="searchResult", name="searchResult")
-            each company in companies
+            each Company in Companies
                 li(hidden)
-                    p #{company.name}
+                    p #{Company.name}
                     button(type="button", onclick="setCompanyId(this)") 선택
-                    p(id="dataCompanyId", name="dataCompanyId", hidden) #{company.id}
+                    p(id="dataCompanyId", name="dataCompanyId", hidden) #{Company.id}
         p 회사 ID:
         input(id="companyId", name="companyId", type="text", placeholder="자동으로 입력됩니다.", readonly, required)
         p 직급:

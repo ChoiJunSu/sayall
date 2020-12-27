@@ -12,23 +12,21 @@ module.exports = class Rating extends Sequelize.Model {
             },
             requestId: {
                 type: Sequelize.STRING(20),
-                allowNull: false
+                allowNull: false,
+                unique: true
             },
             userId: {
                 type: Sequelize.STRING(20),
                 allowNull: false
             },
             objectivity: {
-                type: Sequelize.STRING(20),
-                allowNull: false
+                type: Sequelize.STRING(20)
             },
             quickness: {
-                type: Sequelize.STRING(20),
-                allowNull: false
+                type: Sequelize.STRING(20)
             },
             kindness: {
-                type: Sequelize.STRING(20),
-                allowNull: false
+                type: Sequelize.STRING(20)
             }
         }, {
             sequelize,
@@ -46,9 +44,9 @@ module.exports = class Rating extends Sequelize.Model {
             foreignKey: 'requestId',
             targetKey: 'id'
         });
-        db.Rating.belongsTo(db.Request, {
+        db.Rating.belongsTo(db.User, {
             foreignKey: 'userId',
-            targetKey: 'receiverId'
+            targetKey: 'id'
         });
     }
 };

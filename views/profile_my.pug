@@ -2,18 +2,18 @@ extends layout
 
 block content
     p <내 프로필>
-    if profiles.length==0
+    if Profiles.length==0
         p 프로필을 생성해주세요
     else
         ul
-            each profile in profiles
+            each Profile in Profiles
                 li
-                    |   회사 이름: #{profile.Company.name}
-                    |   직급: #{profile.position}
-                    |   입사일: #{profile.startDate}
-                    |   퇴사일: #{profile.endDate}
+                    |   회사 이름: #{Profile.Company.name}
+                    |   직급: #{Profile.position}
+                    |   입사일: #{Profile.startDate}
+                    |   퇴사일: #{Profile.endDate}
                     button(type="button", onclick="getProfileDetail(this)") 상세정보
-                    p(id="dataProfileId", hidden) #{profile.id}
+                    p(id="dataProfileId", hidden) #{Profile.id}
 
     button(type="button", onclick="location.href='/profile/register'") 프로필 추가
 

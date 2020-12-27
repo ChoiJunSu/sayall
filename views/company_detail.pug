@@ -2,24 +2,24 @@ extends layout
 
 block content
     p <회사 상세정보>
-    p 회사 이름: #{company.name}
+    p 회사 이름: #{Company.name}
     p 프로필
-    if profiles.length == 0
+    if Profiles.length == 0
         p 등록된 프로필이 없습니다.
     else
         ul
-            each profile in profiles
+            each Profile in Profiles
                 li
                     p
-                    |   닉네임: #{profile.User.nickname}
-                    |   직급: #{profile.position}
-                    |   부서: #{profile.department}
-                    |   입사일: #{profile.startDate}
-                    |   퇴사일: #{profile.endDate}
+                    |   닉네임: #{Profile.User.nickname}
+                    |   직급: #{Profile.position}
+                    |   부서: #{Profile.department}
+                    |   입사일: #{Profile.startDate}
+                    |   퇴사일: #{Profile.endDate}
                     button(type="button", onclick="sendRequest(this)") 요청 보내기
-                    p(id="dataUserId", hidden) #{profile.userId}
+                    p(id="dataUserId", hidden) #{Profile.userId}
 
-    p(id="dataCompanyId", hidden) #{company.id}
+    p(id="dataCompanyId", hidden) #{Company.id}
 
     script.
         function sendRequest(that) {

@@ -46,12 +46,12 @@ module.exports = class Request extends Sequelize.Model {
     }
     static associate(db) {
         db.Request.belongsTo(db.User, {
-            as: 'sender',
+            as: 'Sender',
             foreignKey: 'senderId',
             targetKey: 'id'
         });
         db.Request.belongsTo(db.User, {
-            as: 'receiver',
+            as: 'Receiver',
             foreignKey: 'receiverId',
             targetKey: 'id'
         });
@@ -62,10 +62,6 @@ module.exports = class Request extends Sequelize.Model {
         Request.hasMany(db.Rating, {
             foreignKey: 'requestId',
             sourceKey: 'id'
-        });
-        Request.hasMany(db.Rating, {
-            foreignKey: 'userId',
-            sourceKey: 'receiverId'
         });
     }
 };

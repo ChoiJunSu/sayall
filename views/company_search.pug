@@ -4,11 +4,11 @@ block content
     p <회사 검색>
         input(id="companySearch", type="text", onkeyup="searchCompany()", placeholder="회사 이름으로 검색하세요.")
     ul(id="searchResult")
-        each company in companies
+        each Company in Companies
             li(hidden)
-                p #{company.name}
+                p #{Company.name}
                 button(type="button", onclick="getProfiles(this)") 프로필 보기
-                p(id="dataCompanyId", hidden) #{company.id}
+                p(id="dataCompanyId", hidden) #{Company.id}
 
     script.
         // company search

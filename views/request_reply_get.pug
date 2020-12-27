@@ -2,11 +2,11 @@ extends layout
 
 block content
     p <답변>
-    p #{request.Company.name} 에서 일했던 #{request.targetName} 님에 대한 #{request.receiver.nickname} 님의 답변입니다.
-    textarea(id="reply", readonly) #{request.reply}
+    p #{Request.Company.name} 에서 일했던 #{Request.targetName} 님에 대한 #{Request.Receiver.nickname} 님의 답변입니다.
+    textarea(id="reply", readonly) #{Request.reply}
     button(type="button", onclick="window.history.back()") 취소
 
-    p(id="dataReply", hidden) #{request.reply}
+    p(id="dataReply", hidden) #{Request.reply}
 
     script.
         window.onload = () => {

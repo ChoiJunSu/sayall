@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    p <답변 평가>
+    p #{Request.Company.name} 에서 일했던 #{Request.targetName} 님에 대한 #{Request.Receiver.nickname} 님의 답변을 평가합니다.
+    form(action="/request/rating/set?requestId="+Request.id, accept-charset="utf-8", method="post")
+        label(for="objectivity") 객관성
+        input(id="objectivity", name="objectivity", type="range", min="1", max="10", step="1")
+        br
+        label(for="quickness") 신속성
+        input(id="quickness", name="quickness", type="range", min="1", max="10", step="1")
+        br
+        label(for="kindness") 친절함
+        input(id="kindness", name="kindness", type="range", min="1", max="10", step="1")
+        br
+        button(type="submit") 저장

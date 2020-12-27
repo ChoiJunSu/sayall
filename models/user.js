@@ -54,5 +54,9 @@ module.exports = class User extends Sequelize.Model {
             foreignKey: 'receiverId',
             sourceKey: 'id'
         });
+        User.hasOne(db.Rating, {
+            foreignKey: 'userId',
+            sourceKey: 'id'
+        })
     }
 };

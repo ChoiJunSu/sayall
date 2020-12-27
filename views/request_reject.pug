@@ -2,13 +2,13 @@ extends layout
 
 block content
     p <요청 거절>
-    p #{request.Company.name} 에서 일했던 #{request.targetName} 에 대한 요청을 거절합니다.
+    p #{Request.Company.name} 에서 일했던 #{Request.targetName} 에 대한 요청을 거절합니다.
     form(action="/request/reject", accept-charset="utf-8", method="post")
         button(type="submit") 거절
         button(type="button", onclick="window.history.back()") 취소
         input(id="requestId", name="requestId", hidden)
 
-    p(id="dataRequestId", hidden) #{request.id}
+    p(id="dataRequestId", hidden) #{Request.id}
 
     script.
         window.onload = () => {

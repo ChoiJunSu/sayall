@@ -37,13 +37,13 @@ block content
         button(type="button", onclick="window.history.back()") 취소
         input(id="profileId", name="profileId", hidden)
 
-    p(id="dataProfileId", hidden) #{profile.id}
-    p(id="dataCompanyName", hidden) #{profile.Company.name}
-    p(id="dataCompanyId", hidden) #{profile.companyId}
-    p(id="dataPosition", hidden) #{profile.position}
-    p(id="dataDepartment", hidden) #{profile.department}
-    p(id="dataStartDate", hidden) #{profile.startDate}
-    p(id="dataEndDate", hidden) #{profile.endDate}
+    p(id="dataProfileId", hidden) #{Profile.id}
+    p(id="dataCompanyName", hidden) #{Profile.Company.name}
+    p(id="dataCompanyId", hidden) #{Profile.companyId}
+    p(id="dataPosition", hidden) #{Profile.position}
+    p(id="dataDepartment", hidden) #{Profile.department}
+    p(id="dataStartDate", hidden) #{Profile.startDate}
+    p(id="dataEndDate", hidden) #{Profile.endDate}
 
     script.
         window.onload = () => {

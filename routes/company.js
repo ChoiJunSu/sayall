@@ -32,9 +32,7 @@ router.post('/register', isLoggedIn, async (req, res, next) => {
 router.get('/search', isLoggedIn, async (req, res, next) => {
     try {
         const companies = await Company.findAll({});
-        console.log(companies);
-        console.log('after companies');
-        return res.render('company_search', {companies});
+        return res.render('company_search', {Companies: companies});
     } catch (error) {
         console.error(error);
         return next(error);
@@ -54,7 +52,7 @@ router.get('/detail', isLoggedIn, async (req, res, next) => {
            }],
            where: {companyId}
        });
-       return res.render('company_detail', {company, profiles});
+       return res.render('company_detail', {Company: company, Profiles: profiles});
    } catch (error) {
        console.error(error);
        return next(error);
